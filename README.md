@@ -1,9 +1,17 @@
-# Imagens de produtos — Mondê Chocolates
+# CDN de imagens de produtos
 
-Hospedagem das fotos fornecidas pelo cliente para importação no Olist.
+Biblioteca temporária de imagens otimizadas para importação em ERPs e e-commerce.
+As imagens são servidas pelo jsDelivr a partir deste repositório público:
 
-Produto: código 108, damasco seco com cobertura de chocolate ao leite, 150 g. EAN do cadastro: 7898975627598.
+    https://cdn.jsdelivr.net/gh/alceurs/monde-chocolates-imagens@main/<cliente>/<arquivo>
 
-Ordem confirmada pelo cliente: 01 fundo branco, 02 bancada da cozinha, 03 vista superior com damascos. As imagens são cópias integrais dos anexos recebidos, sem alterações.
+## Estrutura
 
-As URLs só devem ser preenchidas na planilha após verificar acesso público direto a cada PNG.
+- Uma pasta por cliente (ex.: `monde-chocolates/`).
+- Nome do arquivo: `<SKU>-<ordem>.jpg` (ex.: `841-01.jpg` = SKU 841, imagem 1).
+- Padrão: JPG, quadrado, 72 DPI, otimizado para web.
+
+## Ciclo de vida
+
+As imagens ficam aqui apenas até serem incorporadas pelo sistema de destino e salvas no diretório do cliente.
+Ao trocar uma imagem já publicada, use um nome novo (ex.: `841-01-v2.jpg`): o jsDelivr mantém cópia em cache.
